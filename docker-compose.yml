@@ -39,4 +39,4 @@ services:
 
 networks:
   net1:
-    external: true
+    # external: true

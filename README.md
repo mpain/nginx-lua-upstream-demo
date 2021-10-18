@@ -5,10 +5,10 @@
 First, you should build a scala application and publish it into a local docker repository. Then just run docker-compose.
 ```
 cd ./scala-app
-sbt publishLocal
+sbt docker:publishLocal
 
 cd ..
-docker-compose up --build
+docker-compose up -d --build
 ```
 
 ### Some query samples
