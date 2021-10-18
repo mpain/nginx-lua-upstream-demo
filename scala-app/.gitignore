@@ -1,0 +1,36 @@
+
+# Created by https://www.gitignore.io/api/sbt,scala
+# Edit at https://www.gitignore.io/?templates=sbt,scala
+
+### SBT ###
+# Simple Build Tool
+# http://www.scala-sbt.org/release/docs/Getting-Started/Directories.html#configuring-version-control
+.DS_Store
+dist/*
+target/
+lib_managed/
+src_managed/
+project/boot/
+project/plugins/project/
+.history
+.cache
+.lib/
+.idea/
+.idea
+.metals/
+.metals
+.bloop/
+.bloop
+.test-env/
+*test-env*
+test-env/
+test-env/*
+*idea*
+.idea/workspace.xml
+### Scala ###
+*.class
+*.log
+.bsp/
+.bsp
+
+# End of https://www.gitignore.io/api/sbt,scala

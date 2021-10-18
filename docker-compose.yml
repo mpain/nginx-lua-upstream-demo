@@ -1,0 +1,42 @@
+version: '3.3'
+
+services:
+  
+  # Application 1
+  app1:
+    image: "upstream-test-scala-app:0.0.1-SNAPSHOT"
+    environment:
+      - APP_NAME=CPG-RU
+    container_name: app1
+    ports:
+      - "8091:8080"
+    networks:
+      - net1
+  
+  # Application 2
+  app2:
+    image: "upstream-test-scala-app:0.0.1-SNAPSHOT"
+    environment:
+      - APP_NAME=CPG-ALI
+    container_name: app2
+    ports:
+      - "8092:8080"
+    networks:
+      - net1
+
+  # Nginx
+  nginx:
+    build: ./nginx
+    image: "nginx:latest"
+    container_name: nginx 
+    ports:
+      - "8080:80"
+    depends_on:
+      - app1
+      - app2
+    networks:
+      - net1
+
+networks:
+  net1:
+    external: true
